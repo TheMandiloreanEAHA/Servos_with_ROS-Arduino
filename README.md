@@ -7,13 +7,13 @@ que puede mapear un rango de valores dados a otro que sea deseado (De preferenci
 # ¿Cómo usarlo?
 1. Primero se tienen que conectar los servomotores a los pines correspondientes en la Arduino.
 2. Una vez hecho esto y cargado el programa, debemos levantar el master en ROS
-´´´bash
+```bash
 roscore
-´´´
+```
 3. Ahora debemos abrir el puerto donde se comunicará ROS con arduino (serialnode)
-´´´bash
-#Completar
-´´´
+```bash
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+``` 
 4. Ahora debemos publicar en el tópico al que estamos sucritos. Publicar un Joint State de manera manual puede ser bastante tedioso, por lo que yo
 recominedo hacer un launcher que inicalice Rviz con un modelo URDF cargado y que abra una interfaz Joint State Publisher GUI, el cual contenga 2 joints que hagan referencia a los servos que intentas mover.
 En mi caso, utilicé el modelo de una unidad PantTilt
